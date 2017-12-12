@@ -1,5 +1,5 @@
 # Asteroid-Armageddon-Simulation
-This project simulates an end of the world senario with asteroids.
+This project simulates an end of the world senario with a giant asteroid.
 
 Setting: "In the near distant future, the Earth is at war against a race of giant intelligent alien insects! 
 Little is known about the Bugs except that they are intent on the eradication of all human life." (COPYWRITE by Touchstone Pictures) 
