@@ -1,9 +1,9 @@
 import java.util.ArrayList;
 import java.util.Random;
 
-public class LunchPadSetUp extends Atomic {//////////////output could be int or rocket
+public class LaunchPadSetUp extends Atomic {//////////////output could be int or rocket
 
-    LunchPadSetUp() {
+    LaunchPadSetUp() {
         MAX_INPUTS_VAL = 1;
         MAX_OUTPUTS_VAL = 2;
 

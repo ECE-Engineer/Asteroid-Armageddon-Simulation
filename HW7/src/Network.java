@@ -14,7 +14,7 @@ public class Network<T> extends Atomic {
     private ArrayList<Network> networkArrayList;
     private ArrayList<MissionControl> missionControlArrayList;
     private ArrayList<BoosterFiringCheck> boosterFiringCheckArrayList;
-    private ArrayList<LunchPadSetUp> lunchPadSetUpArrayList;
+    private ArrayList<LaunchPadSetUp> launchPadSetUpArrayList;
     private ArrayList<FuelCheck> fuelCheckArrayList;
     private ArrayList<ValveCheck> valveCheckArrayList;
     private ArrayList<AddPayload> addPayloadArrayList;
@@ -439,7 +439,7 @@ public class Network<T> extends Atomic {
         networkArrayList = networkBuilder.networks;
         missionControlArrayList = networkBuilder.missionControls;
         boosterFiringCheckArrayList = networkBuilder.boosterFiringChecks;
-        lunchPadSetUpArrayList = networkBuilder.lunchPadSetUps;
+        launchPadSetUpArrayList = networkBuilder.launchPadSetUps;
         fuelCheckArrayList = networkBuilder.fuelChecks;
         valveCheckArrayList = networkBuilder.valveChecks;
         addPayloadArrayList = networkBuilder.addPayloads;
@@ -456,7 +456,7 @@ public class Network<T> extends Atomic {
     public static class NetworkBuilder {
         private ArrayList<MissionControl> missionControls;
         private ArrayList<BoosterFiringCheck> boosterFiringChecks;
-        private ArrayList<LunchPadSetUp> lunchPadSetUps;
+        private ArrayList<LaunchPadSetUp> launchPadSetUps;
         private ArrayList<FuelCheck> fuelChecks;
         private ArrayList<ValveCheck> valveChecks;
         private ArrayList<AddPayload> addPayloads;
@@ -469,7 +469,7 @@ public class Network<T> extends Atomic {
 
             missionControls = new ArrayList<>();
             boosterFiringChecks = new ArrayList<>();
-            lunchPadSetUps = new ArrayList<>();
+            launchPadSetUps = new ArrayList<>();
             fuelChecks = new ArrayList<>();
             valveChecks = new ArrayList<>();
             addPayloads = new ArrayList<>();
@@ -494,8 +494,8 @@ public class Network<T> extends Atomic {
             return this;
         }
 
-        public NetworkBuilder lunchPadSetUps(ArrayList<LunchPadSetUp> lunchPadSetUps) {
-            this.lunchPadSetUps = lunchPadSetUps;
+        public NetworkBuilder lunchPadSetUps(ArrayList<LaunchPadSetUp> launchPadSetUps) {
+            this.launchPadSetUps = launchPadSetUps;
             return this;
         }
 

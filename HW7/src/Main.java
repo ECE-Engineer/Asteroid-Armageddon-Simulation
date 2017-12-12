@@ -9,7 +9,7 @@ public class Main {
         ArrayList<Network> networkArrayList = new ArrayList<>();
         ArrayList<MissionControl> missionControlArrayList = new ArrayList<>();
         ArrayList<BoosterFiringCheck> boosterFiringCheckArrayList = new ArrayList<>();
-        ArrayList<LunchPadSetUp> lunchPadSetUpArrayList = new ArrayList<>();
+        ArrayList<LaunchPadSetUp> launchPadSetUpArrayList = new ArrayList<>();
         ArrayList<FuelCheck> fuelCheckArrayList = new ArrayList<>();
         ArrayList<ValveCheck> valveCheckArrayList = new ArrayList<>();
         ArrayList<AddPayload> addPayloadArrayList = new ArrayList<>();
@@ -41,19 +41,19 @@ public class Main {
                 hashMap.put(new Pair<BoosterFiringCheck>(boosterFiringCheckArrayList.get(j), 0), new Pair<MissionControl>(missionControlArrayList.get(j), 0));//feedback loop
             }
             for (int j = 0; j < MAX_LAUNCH_PAD_SETUP; j++) {
-                lunchPadSetUpArrayList.add(new LunchPadSetUp());
+                launchPadSetUpArrayList.add(new LaunchPadSetUp());
                 //take output[1] -> to input[0]
-                hashMap.put(new Pair<BoosterFiringCheck>(boosterFiringCheckArrayList.get(j), 1), new Pair<LunchPadSetUp>(lunchPadSetUpArrayList.get(j), 0));
+                hashMap.put(new Pair<BoosterFiringCheck>(boosterFiringCheckArrayList.get(j), 1), new Pair<LaunchPadSetUp>(launchPadSetUpArrayList.get(j), 0));
 
                 //loop back to mission control is fail
 
                 //take output[0] -> to input[0]
-                hashMap.put(new Pair<LunchPadSetUp>(lunchPadSetUpArrayList.get(j), 0), new Pair<MissionControl>(missionControlArrayList.get(j), 0));//feedback loop
+                hashMap.put(new Pair<LaunchPadSetUp>(launchPadSetUpArrayList.get(j), 0), new Pair<MissionControl>(missionControlArrayList.get(j), 0));//feedback loop
             }
             for (int j = 0; j <MAX_FUEL_CHECK ; j++) {
                 fuelCheckArrayList.add(new FuelCheck());
                 //take output[1] -> to input[0]
-                hashMap.put(new Pair<LunchPadSetUp>(lunchPadSetUpArrayList.get(j), 1), new Pair<FuelCheck>(fuelCheckArrayList.get(j), 0));
+                hashMap.put(new Pair<LaunchPadSetUp>(launchPadSetUpArrayList.get(j), 1), new Pair<FuelCheck>(fuelCheckArrayList.get(j), 0));
 
                 //loop back to SELF if fail
 
@@ -83,7 +83,7 @@ public class Main {
             Network<Integer> network = new Network.NetworkBuilder()
                     .missionControls(missionControlArrayList)
                     .boosterFiringChecks(boosterFiringCheckArrayList)
-                    .lunchPadSetUps(lunchPadSetUpArrayList)
+                    .lunchPadSetUps(launchPadSetUpArrayList)
                     .fuelChecks(fuelCheckArrayList)
                     .valveChecks(valveCheckArrayList)
                     .addPayloads(addPayloadArrayList)
